@@ -1,0 +1,178 @@
+-- INSERT CUSTOMER
+INSERT INTO customer VALUES(
+	1,
+	'Alex',
+	'Swiggum',
+	'4242-4242-4242-4242',
+	'Platinum Level'
+);
+
+-- INSERT CUSTOMER
+INSERT INTO customer VALUES(
+	2,
+	'Henri',
+	'Swiggum',
+	'4242-4242-4242-4242',
+	'Bronze Level'
+);
+
+-- INSERT STAFF
+INSERT INTO staff VALUES(
+	1,
+	'Terrell',
+	'McKinney',
+	TO_DATE('17/06/1990', 'DD/MM/YYYY'),
+	TO_DATE('11/02/2019', 'DD/MM/YYYY')	
+);
+
+-- INSERT STAFF
+INSERT INTO staff VALUES(
+	2,
+	'Ryan',
+	'Rhoades',
+	TO_DATE('03/10/1991', 'DD/MM/YYYY'),
+	TO_DATE('20/01/2019', 'DD/MM/YYYY')	
+);
+
+-- INSERT MOVIE
+INSERT INTO movie VALUES(
+	1,
+	'The Lobster',
+	'Romance/Drama',
+	TO_DATE('15/06/2015', 'DD/MM/YYYY'),
+	1.58,
+	'R'
+);
+
+INSERT INTO movie VALUES(
+	2,
+	'Harold & Maude',
+	'Comedy/Romance',
+	TO_DATE('15/06/1971', 'DD/MM/YYYY'),
+	1.31,
+	'PG-13'
+);
+
+-- INSERT MOVIE
+INSERT INTO movie VALUES(
+	3,
+	'Shirley',
+	'Drama/Thriller',
+	TO_DATE('03/09/2020', 'DD/MM/YYYY'),
+	1.47,
+	'R'
+);
+
+-- INSERT HALL
+INSERT INTO hall VALUES(
+	1,
+	'HALL A',
+	100
+);
+
+-- INSERT HALL
+INSERT INTO hall VALUES(
+	2,
+	'HALL B',
+	100
+);
+
+-- INSERT HALL
+INSERT INTO hall VALUES(
+	3,
+	'HALL C',
+	100
+);
+
+-- INSERT MOVIETIME
+INSERT INTO movietime VALUES(
+	1,
+	CURRENT_DATE,
+	7.00,
+	1,
+	2
+);
+
+-- INSERT MOVIETIME
+INSERT INTO movietime VALUES(
+	2,
+	CURRENT_DATE,
+	8.00,
+	2,
+	1
+);
+
+-- INSERT MOVIETIME
+INSERT INTO movietime VALUES(
+	3,
+	CURRENT_DATE,
+	6.00,
+	3,
+	3
+);
+
+-- INSERT TICKET
+INSERT INTO ticket VALUES(
+	1,
+	8.99,
+	'VISA',
+	1,
+	2,
+	3
+);
+
+-- INSERT TICKET
+INSERT INTO ticket VALUES(
+	2,
+	8.99,
+	'CASH',
+	2,
+	2,
+	3
+);
+
+-- INSERT CONCESSION
+INSERT INTO concession VALUES(
+	1,
+	'Popcorn',
+	3.99,
+	1
+);
+
+-- INSERT CONCESSION
+INSERT INTO concession VALUES(
+	2,
+	'skittles',
+	2.99,
+	1
+);
+
+-- INSERT CONCESSION
+INSERT INTO concession VALUES(
+	3,
+	'milkduds',
+	2.99,
+	2
+);
+
+SELECT *
+FROM concession; -- Update product_name to title case
+
+SELECT * 
+FROM customer;
+
+SELECT *
+FROM staff; -- UPDATE PHONE_NUMBER & HIRE_DATE
+
+SELECT *
+FROM movie; -- UPDATE movie_length
+
+SELECT *
+FROM movietime; -- Update screening_time
+
+SELECT *
+FROM ticket;
+
+
+
+

@@ -1,0 +1,66 @@
+--ALTER TABLE movietime
+--ADD COLUMN screening_time TIME;
+
+ALTER TABLE staff
+ADD COLUMN phone_number VARCHAR(20);
+
+UPDATE staff
+SET birth_date = TO_DATE('17/06/1990', 'DD/MM/YYYY'), hire_date = TO_DATE('11/02/2019', 'DD/MM/YYYY'), phone_number = '(753)893-2930'
+WHERE staff_id = 1;
+
+UPDATE staff
+SET birth_date = TO_DATE('03/10/1991', 'DD/MM/YYYY'), hire_date = TO_DATE('20/01/2019', 'DD/MM/YYYY'), phone_number = '(867)867-5309'
+WHERE staff_id = 2;
+
+UPDATE concession
+SET product_name = 'Skittles'
+WHERE concession_id = 2;
+
+UPDATE concession
+SET product_name = 'Milkduds'
+WHERE concession_id = 3;
+
+ALTER TABLE movie
+ADD COLUMN movie_length time;
+
+UPDATE movie
+SET movie_length = '1:58:13'
+WHERE movie_id = 1;
+
+UPDATE movie
+SET movie_length = '1:31:51'
+WHERE movie_id = 2;
+
+UPDATE movie
+SET movie_length = '1:47:36'
+WHERE movie_id = 3;
+
+UPDATE movietime
+SET screening_time = '19:00:00'
+WHERE movie_id = 1;
+
+UPDATE movietime
+SET screening_time = '20:00:00'
+WHERE movie_id = 2;
+
+UPDATE movietime
+SET screening_time = '18:00:00'
+WHERE movie_id = 3;
+
+SELECT *
+FROM concession; 
+
+SELECT * 
+FROM customer;
+
+SELECT *
+FROM staff; 
+
+SELECT *
+FROM movie;
+
+SELECT *
+FROM movietime;
+
+SELECT *
+FROM ticket;

@@ -1,0 +1,64 @@
+CREATE TABLE IF NOT EXISTS customer(
+	customer_id SERIAL PRIMARY KEY,
+	first_name VARCHAR(100),
+	last_name VARCHAR(100),
+	billing_info VARCHAR(20),
+	rewards_level VARCHAR(20)
+);
+
+CREATE TABLE IF NOT EXISTS concession(
+	concession_id SERIAL PRIMARY KEY,
+	product_name VARCHAR(100),
+	product_price NUMERIC(4,2),
+	customer_id INTEGER NOT NULL,
+	FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
+);
+
+CREATE TABLE IF NOT EXISTS staff(
+	staff_id SERIAL PRIMARY KEY,
+	first_name VARCHAR(100),
+	last_name VARCHAR(100),
+	birth_date DATE,
+	phone_date VARCHAR(20),
+	hire_date DATE
+);
+
+CREATE TABLE IF NOT EXISTS movie(
+	movie_id SERIAL PRIMARY KEY,
+	movie_name VARCHAR(100),
+	movie_genre VARCHAR(100),
+	release_date DATE,
+	movie_length INTEGER,
+	movie_rating VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS hall(
+	hall_id SERIAL PRIMARY KEY,
+	hall_name VARCHAR(10),
+	total_seats INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS movietime(
+	movietime_id SERIAL PRIMARY KEY,
+	movie_date DATE,
+	screening_time INTEGER,
+	movie_id INTEGER NOT NULL,
+	hall_id INTEGER NOT NULL,
+	FOREIGN KEY (movie_id) REFERENCES movie(movie_id),
+	FOREIGN KEY (hall_id) REFERENCES hall(hall_id)
+);
+
+CREATE TABLE IF NOT EXISTS ticket(
+	ticket_id SERIAL PRIMARY KEY,
+	ticket_price NUMERIC(4,2),
+	payment_method VARCHAR(100),
+	customer_id INTEGER NOT NULL,
+	staff_id INTEGER NOT NULL,
+	movietime_id INTEGER NOT NULL,
+	FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+	FOREIGN KEY (staff_id) REFERENCES staff(staff_id),
+	FOREIGN KEY (movietime_id) REFERENCES movietime(movietime_id)
+);
+
+
+	
